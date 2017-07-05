@@ -72,7 +72,6 @@ In this application, the simulated purchases and social network events are provi
 .
 ├── README.md
 ├── insight_testsuite
-│   ├── results.txt
 │   ├── run_tests.sh
 │   └── tests
 │       ├── test_1
