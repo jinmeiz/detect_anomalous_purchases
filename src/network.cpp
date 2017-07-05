@@ -139,7 +139,7 @@ void network::read_batch_log(ifstream& in_batch_log) {
   }
 }
 
-const unordered_set<user_id_t> network::get_friends_network(const user_id_t user_id) {
+unordered_set<user_id_t> network::get_friends_network(const user_id_t user_id) {
   // obtain user map
   const unordered_map<size_t, user_info>& map_users = get_network();
 
@@ -188,7 +188,7 @@ const unordered_set<user_id_t> network::get_friends_network(const user_id_t user
   return friends_in_network;
 }
 
-const vector<purchase_info> network::friend_purchases(
+vector<purchase_info> network::friend_purchases(
     const unordered_set<user_id_t>& firends_in_network) {
 
   // create a vector for storing all the most recent T purchase
@@ -254,10 +254,10 @@ bool network::compute_mean_sd(const user_id_t user_id,
     double& mean, double& standard_deviation) {
 
   // obtain the user's friends in the D-degree social network
-  const unordered_set<user_id_t>& friends_in_network = get_friends_network(user_id);
+  const unordered_set<user_id_t> friends_in_network = get_friends_network(user_id);
 
   // obtain the last T purchases in the social network
-  const vector<purchase_info>& friends_purchases = friend_purchases(friends_in_network);
+  const vector<purchase_info> friends_purchases = friend_purchases(friends_in_network);
 
   size_t n_purchases = friends_purchases.size();
   // if the number of purchases is larger than 1,

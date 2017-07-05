@@ -37,12 +37,12 @@ class network {
     //         (D degree of separation)
     // input:  user_id - a user id
     // return: an unordered set containing the friend ids of a user within D degree of separation
-    const std::unordered_set<user_id_t> get_friends_network(const user_id_t user_id);
+    std::unordered_set<user_id_t> get_friends_network(const user_id_t user_id);
 
     // function to obtain the recent T purchases in a user's network
     // input:  firends_in_network - friend ids of a user within D degree of separation
     // return: a vector of purchases
-    const std::vector<purchase_info> friend_purchases(const std::unordered_set<user_id_t>&
+    std::vector<purchase_info> friend_purchases(const std::unordered_set<user_id_t>&
         firends_in_network) ;
 
     // function to compute mean and standard deviations of the last T purchases
