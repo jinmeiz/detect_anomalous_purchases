@@ -104,7 +104,6 @@ In this application, the simulated purchases and social network events are provi
 │   └── stream_log.json
 └── src
     ├── Makefile
-    ├── anomaly_detection
     ├── include
     │   └── rapidjson (include RapidJSON headers)
     ├── main.cpp
