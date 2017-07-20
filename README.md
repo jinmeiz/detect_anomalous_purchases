@@ -114,6 +114,8 @@ In this application, the simulated purchases and social network events are provi
 
 # Design
 
+<img src="./images/code_flow.png" width="400">
+
 ## 1. Data structures
 
 ### `user_info` class
@@ -122,11 +124,15 @@ In this application, the simulated purchases and social network events are provi
 ### `network` class
  It keeps a record of all users and purchases, which is updated when the stream input file (`stream_log.json`) is processed. It also holds variables that define the degree of separation (`D`) for a user's social network, set the maximum number of purchase history (`T`), and track the order in which purchases are read.  
 
+<img src="./images/class_demo.png" width="400">
+
 ## 2. Algorithms
 
 ### network traversal with `get_friends_network()`
 
 `get_friends_network()` function returns an unordered set, which contains all the friend IDs of a user within `D` degree of separation. In the function, a queue is used to hold a set of visited friends in the network ad track the degree of seperation. Initially, the user is pushed to the queue. Then, while the queue is not empty, the user at the front of the queue is removed, and the IDs of that user's direct friends are added. Those direct friends' IDs are also added to the output set. The above two steps are repeated until all friends in the user's network have been visited, while skipping friends that have already been visited. At the `D` degree of separation, users' friends are no longer pushed into the queue.  When the queue is empty, all friends within `D` degree of separation are present in the output set.
+
+<img src="./images/get_friend_func.png" width="400">
 
 ### collect most recent `T` purchases with `friend_purchases()` 
 
