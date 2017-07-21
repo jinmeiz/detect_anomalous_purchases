@@ -122,11 +122,15 @@ In this application, the simulated purchases and social network events are provi
 ### `user_info` class
  This class keeps track of a user's direct friends (_i.e._ one degree of seperation) and the most recent `T` purchases of a user. 
 
+<p align="center">
+<img src="./images/user_info_class.png" width="600">
+</p>
+
 ### `network` class
  It keeps a record of all users and purchases, which is updated when the stream input file (`stream_log.json`) is processed. It also holds variables that define the degree of separation (`D`) for a user's social network, set the maximum number of purchase history (`T`), and track the order in which purchases are read.  
 
 <p align="center">
-<img src="./images/class_demo.png" width="600">
+<img src="./images/network_class.png" width="600">
 </p>
 
 ## 2. Algorithms
