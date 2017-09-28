@@ -155,7 +155,7 @@ In `friend_purchase()` function,  a vector with a maximum size of 2`T` is create
 
 # License
 ### RapidJSON 
-[RapidJSON]("http://rapidjson.org") source code is licensed under the MIT License. <br >
+[RapidJSON](http://rapidjson.org) source code is licensed under the MIT License. <br >
 Copyright (C) 2015 THL A29 Limited, a Tencent company, and Milo Yip
 
 
